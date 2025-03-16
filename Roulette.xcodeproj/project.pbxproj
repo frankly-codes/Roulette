@@ -52,6 +52,10 @@
 		765EC5562D851FFD00552A5B /* Roulette */ = {
 			isa = PBXGroup;
 			children = (
+				76E1B2682D8685060061D5DB /* BackendResources */,
+				76E1B2672D8684F80061D5DB /* UIResources */,
+				76E1B2662D8684EC0061D5DB /* Modules */,
+				76E1B2652D8684E00061D5DB /* Utils */,
 				765EC5572D851FFD00552A5B /* RouletteApp.swift */,
 				765EC5592D851FFD00552A5B /* ContentView.swift */,
 				765EC55B2D851FFE00552A5B /* Assets.xcassets */,
@@ -67,6 +71,34 @@
 				765EC55F2D851FFE00552A5B /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		76E1B2652D8684E00061D5DB /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		76E1B2662D8684EC0061D5DB /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		76E1B2672D8684F80061D5DB /* UIResources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UIResources;
+			sourceTree = "<group>";
+		};
+		76E1B2682D8685060061D5DB /* BackendResources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = BackendResources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
