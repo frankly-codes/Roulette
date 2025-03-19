@@ -11,7 +11,6 @@ struct SpinnerSegment: View {
     let option: SpinnerOptionModel
     var body: some View {
         ZStack {
-            // Segmento de la ruleta
             Path { path in
                 let center = CGPoint(x: option.size / 2, y: option.size / 2)
                 let radius = option.size / 2
@@ -22,12 +21,11 @@ struct SpinnerSegment: View {
             }
             .fill(option.color)
 
-            // Texto opcional
             if let text = option.text {
                 Text(text)
                     .font(.system(size: option.size * 0.07, weight: .bold))
-                    .foregroundColor(.black)
-                    .rotationEffect(.degrees((option.startAngle + option.endAngle) / 2)) // Orientación correcta
+                    .foregroundColor(.white)
+                    .rotationEffect(.degrees((option.startAngle + option.endAngle) / 2))
                     .offset(x: option.size * 0.25 * cos((option.startAngle + option.endAngle) / 2 * .pi / 180),
                             y: option.size * 0.25 * sin((option.startAngle + option.endAngle) / 2 * .pi / 180))
             }
@@ -38,7 +36,7 @@ struct SpinnerSegment: View {
 
 struct SpinningSegmentView_Previews: PreviewProvider {
     static var previews: some View {
-        SpinnerSegment(option: SpinnerOptionModel(startAngle: 0, endAngle: 90, color: Color.red, text: "Hello world", size: 200))
+        SpinnerSegment(option: SpinnerOptionModel(startAngle: 0, endAngle: 90, color: ComponentColors.background[0], text: "Hello world", size: 200))
     }
 }
 

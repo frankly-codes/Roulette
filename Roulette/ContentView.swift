@@ -9,13 +9,11 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        ZStack {
-            SpinningBackgroundView()
-            VStack {
-                SpinnerContainerView()
-            }
-            .padding()
+        VStack {
+            MainView()
+                .padding()
         }
+        .padding()
     }
 }
 

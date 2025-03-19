@@ -20,6 +20,9 @@ struct ColorNames {
 }
 
 struct ComponentColors {
+    static let label = ColorNames.rwhite
+    static let border = ColorNames.rwhite
     static let background = [ColorNames.rpink, ColorNames.rred]
     static let backgroundSegments = [ColorNames.rwhite.opacity(0.3), ColorNames.rwhite.opacity(0)]
+    static let rouletteBackground = [ColorNames.rblue, ColorNames.rorange, ColorNames.rpink, ColorNames.rred,ColorNames.ryellow]
 }
