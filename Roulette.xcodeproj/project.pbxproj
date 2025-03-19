@@ -11,6 +11,13 @@
 		765EC55A2D851FFD00552A5B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765EC5592D851FFD00552A5B /* ContentView.swift */; };
 		765EC55C2D851FFE00552A5B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 765EC55B2D851FFE00552A5B /* Assets.xcassets */; };
 		765EC5602D851FFE00552A5B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 765EC55F2D851FFE00552A5B /* Preview Assets.xcassets */; };
+		76E1B26B2D8A1FF50061D5DB /* SpinnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E1B26A2D8A1FF50061D5DB /* SpinnerView.swift */; };
+		76E1B26D2D8A20200061D5DB /* SpinnerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E1B26C2D8A20200061D5DB /* SpinnerModel.swift */; };
+		76E1B26F2D8A202B0061D5DB /* SpinnerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E1B26E2D8A202B0061D5DB /* SpinnerController.swift */; };
+		76E1B2732D8A212F0061D5DB /* SpinnerOptionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E1B2722D8A212F0061D5DB /* SpinnerOptionModel.swift */; };
+		76E1B2752D8A21E00061D5DB /* SpinningBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E1B2742D8A21E00061D5DB /* SpinningBackgroundView.swift */; };
+		76E1B2772D8A2C540061D5DB /* SpinnerSegmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E1B2762D8A2C540061D5DB /* SpinnerSegmentView.swift */; };
+		76E1B2792D8A38920061D5DB /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E1B2782D8A38920061D5DB /* Colors.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +27,13 @@
 		765EC55B2D851FFE00552A5B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		765EC55D2D851FFE00552A5B /* Roulette.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Roulette.entitlements; sourceTree = "<group>"; };
 		765EC55F2D851FFE00552A5B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		76E1B26A2D8A1FF50061D5DB /* SpinnerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerView.swift; sourceTree = "<group>"; };
+		76E1B26C2D8A20200061D5DB /* SpinnerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerModel.swift; sourceTree = "<group>"; };
+		76E1B26E2D8A202B0061D5DB /* SpinnerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerController.swift; sourceTree = "<group>"; };
+		76E1B2722D8A212F0061D5DB /* SpinnerOptionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerOptionModel.swift; sourceTree = "<group>"; };
+		76E1B2742D8A21E00061D5DB /* SpinningBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinningBackgroundView.swift; sourceTree = "<group>"; };
+		76E1B2762D8A2C540061D5DB /* SpinnerSegmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerSegmentView.swift; sourceTree = "<group>"; };
+		76E1B2782D8A38920061D5DB /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +97,8 @@
 		76E1B2662D8684EC0061D5DB /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				76E1B2702D8A210A0061D5DB /* SpinnerOption */,
+				76E1B2692D8A1FDF0061D5DB /* Spinner */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -90,6 +106,8 @@
 		76E1B2672D8684F80061D5DB /* UIResources */ = {
 			isa = PBXGroup;
 			children = (
+				76E1B2742D8A21E00061D5DB /* SpinningBackgroundView.swift */,
+				76E1B2782D8A38920061D5DB /* Colors.swift */,
 			);
 			path = UIResources;
 			sourceTree = "<group>";
@@ -99,6 +117,25 @@
 			children = (
 			);
 			path = BackendResources;
+			sourceTree = "<group>";
+		};
+		76E1B2692D8A1FDF0061D5DB /* Spinner */ = {
+			isa = PBXGroup;
+			children = (
+				76E1B26C2D8A20200061D5DB /* SpinnerModel.swift */,
+				76E1B26A2D8A1FF50061D5DB /* SpinnerView.swift */,
+				76E1B26E2D8A202B0061D5DB /* SpinnerController.swift */,
+			);
+			path = Spinner;
+			sourceTree = "<group>";
+		};
+		76E1B2702D8A210A0061D5DB /* SpinnerOption */ = {
+			isa = PBXGroup;
+			children = (
+				76E1B2722D8A212F0061D5DB /* SpinnerOptionModel.swift */,
+				76E1B2762D8A2C540061D5DB /* SpinnerSegmentView.swift */,
+			);
+			path = SpinnerOption;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -171,8 +208,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				76E1B2772D8A2C540061D5DB /* SpinnerSegmentView.swift in Sources */,
+				76E1B2792D8A38920061D5DB /* Colors.swift in Sources */,
 				765EC55A2D851FFD00552A5B /* ContentView.swift in Sources */,
+				76E1B2752D8A21E00061D5DB /* SpinningBackgroundView.swift in Sources */,
+				76E1B26D2D8A20200061D5DB /* SpinnerModel.swift in Sources */,
+				76E1B26B2D8A1FF50061D5DB /* SpinnerView.swift in Sources */,
 				765EC5582D851FFD00552A5B /* RouletteApp.swift in Sources */,
+				76E1B2732D8A212F0061D5DB /* SpinnerOptionModel.swift in Sources */,
+				76E1B26F2D8A202B0061D5DB /* SpinnerController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
