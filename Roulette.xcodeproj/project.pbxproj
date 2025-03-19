@@ -125,8 +125,8 @@
 		76E1B2662D8684EC0061D5DB /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				7625D8402D8A817800A48ADD /* SpinningBackground */,
 				7625D8372D8A743800A48ADD /* Main */,
+				7625D8402D8A817800A48ADD /* SpinningBackground */,
 				76E1B2702D8A210A0061D5DB /* SpinnerOption */,
 				76E1B2692D8A1FDF0061D5DB /* Spinner */,
 			);
