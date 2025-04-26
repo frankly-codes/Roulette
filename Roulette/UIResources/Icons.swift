@@ -10,8 +10,12 @@ import SwiftUI
 
 struct IconNames {
     static let MAPPIN = "mappin"
+    static let SETTINGS = "line.3.horizontal"
+    static let XMARK = "xmark"
 }
 
 struct Icons {
-    static let MAPPIN = Image(systemName: "mappin")
+    static let MAPPIN = Image(systemName: IconNames.MAPPIN)
+    static let SETTINGS = Image(systemName: IconNames.SETTINGS)
+    static let XMARK = Image(systemName: IconNames.XMARK)
 }

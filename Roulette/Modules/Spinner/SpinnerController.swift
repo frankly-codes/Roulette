@@ -39,7 +39,7 @@ class SpinnerController: ObservableObject {
             return SpinnerOptionModel(
                 startAngle: start,
                 endAngle: end,
-                color: colorDistribution[index], // ✅ Se mantiene constante
+                color: colorDistribution[index],
                 text: items.indices.contains(index) ? items[index] : nil,
                 size: size
             )
