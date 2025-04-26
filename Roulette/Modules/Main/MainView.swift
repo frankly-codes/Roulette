@@ -15,13 +15,32 @@ struct MainView: View {
         numSections: nil,
         colors: ComponentColors.rouletteBackground
     )
+    @State var showSettings = false
 
+    
     var body: some View {
         ZStack {
-            SpinningBackgroundView()
-            VStack {
+            VStack{
+                HStack{
+                    Spacer()
+                    Button(action: {
+                        showSettings = true
+                    }){
+                        Icons.SETTINGS
+                            .resizable()
+                            .scaledToFit()
+                            .foregroundColor(ComponentColors.button)
+                            .frame(width: 40)
+                            .padding()
+                    }
+                    .padding(.top)
+                    
+                }
+                Spacer()
+            }
+            VStack{
                 SelectedItemView(selectedItem: $controller.selectedItem)
-
+                
                 ZStack {
                     SpinnerView(
                         viewModel: spinnerController,
@@ -31,14 +50,21 @@ struct MainView: View {
                         Circle()
                             .stroke(ComponentColors.border, lineWidth: 5)
                     )
-                    .onReceive(NotificationCenter.default.publisher(for: UIDevice.orientationDidChangeNotification)) { _ in
-                        controller.updateScreenSize()
-                    }
-
-                    SelectionIndicator(size: controller.screenSize.width * 0.8)
+                    
+                    SelectionIndicator(size: Constants.ScreenSize.screenSize.width * 0.8)
                 }
             }
+            
         }
+        .fullScreenCover(isPresented: $showSettings) {
+            SettingsView(controller: SettingsController())
+            
+        }
+        .background(
+            SpinningBackgroundView()
+                .scaleEffect(2.0)
+                .ignoresSafeArea()
+        )
     }
 }
 
@@ -46,7 +72,7 @@ struct SelectedItemView: View {
     @Binding var selectedItem: String?
 
     var body: some View {
-        Text(selectedItem ?? Labels.SPIN_THE_WHEEL)
+        Text(selectedItem ?? Labels.MainView.SPIN_THE_WHEEL)
             .font(.title)
             .foregroundStyle(ComponentColors.label)
             .fontWeight(.bold)

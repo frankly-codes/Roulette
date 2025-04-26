@@ -12,12 +12,9 @@ class SpinningBackgroundController: ObservableObject {
     @Published var rotationAngle: Double = 0
     @Published var isAnimating: Bool = true
 
-    var screenSize: CGSize {
-        UIScreen.main.bounds.size
-    }
-
+    
     var dynamicSize: CGFloat {
-        max(screenSize.width, screenSize.height) * 1.2
+        max(Constants.ScreenSize.screenSize.width, Constants.ScreenSize.screenSize.height) * 1.2
     }
 
     let opacity: Double = 0.1

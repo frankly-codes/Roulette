@@ -20,24 +20,25 @@ struct SpinningBackgroundView: View {
             )
             .ignoresSafeArea()
 
-            SpinnerView(
-                viewModel: SpinnerController(
-                    size: controller.dynamicSize,
-                    items: nil,
-                    numSections: controller.numSections,
-                    colors: controller.colors
+            ZStack {
+                SpinnerView(
+                    viewModel: SpinnerController(
+                        size: controller.dynamicSize,
+                        items: nil,
+                        numSections: controller.numSections,
+                        colors: controller.colors
+                    )
                 )
-            )
-            .disabled(true)
-            .rotationEffect(.degrees(controller.rotationAngle))
-            .blendMode(.overlay)
-            .ignoresSafeArea()
-            .animation(.default, value: controller.isAnimating)
-            .onAppear {
-                controller.startAnimation()
+                .disabled(true)
+                .rotationEffect(.degrees(controller.rotationAngle))
+                .blendMode(.overlay)
+                .animation(.default, value: controller.isAnimating)
+                .onAppear {
+                    controller.startAnimation()
+                }
             }
-
-            // Botón de prueba para iniciar/detener animación
+            .ignoresSafeArea()
+            
             VStack {
                 Button(controller.isAnimating ? "Detener" : "Iniciar") {
                     controller.toggleAnimation()
@@ -47,7 +48,6 @@ struct SpinningBackgroundView: View {
                 .foregroundColor(.white)
                 .clipShape(Capsule())
                 .padding()
-                .allowsHitTesting(true)
             }
         }
     }
