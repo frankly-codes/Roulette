@@ -26,6 +26,21 @@ public struct Constants {
     }
     struct ScreenSize{
         static let screenSize = UIScreen.main.bounds.size
-
+    }
+    
+    struct genericItems{
+        //Items for first time running or whenever the persistent data is empty
+        static let examples: ItemsModel = [
+                Item(text: "Dance like no one’s watching"),
+                Item(text: "Sing your favorite song out loud"),
+                Item(text: "Do 10 jumping jacks"),
+                Item(text: "Pretend you’re a superhero for 30 seconds"),
+                Item(text: "Tell a silly joke"),
+                Item(text: "Take a dramatic slow-motion walk"),
+                Item(text: "Invent a handshake with the nearest person"),
+                Item(text: "Balance something on your head for 10 seconds"),
+                Item(text: "Do your best animal impression"),
+                Item(text: "Give a compliment to yourself")
+            ]
     }
 }

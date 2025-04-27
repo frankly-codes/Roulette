@@ -10,7 +10,7 @@ import SwiftUI
 
 class SpinnerController: ObservableObject {
     let size: CGFloat
-    let items: [String?]
+    let items: ItemsModel?
     let numSections: Int
     let colors: [Color]
 
@@ -22,10 +22,10 @@ class SpinnerController: ObservableObject {
 
     lazy var colorDistribution: [Color] = distributeColorsEvenly(colors, count: numSections)
 
-    init(size: CGFloat, items: [String?]?, numSections: Int?, colors: [Color]) {
+    init(size: CGFloat, items: ItemsModel? = nil, numSections: Int?, colors: [Color]) {
         self.size = size
-        self.items = items ?? []
-        self.numSections = numSections ?? self.items.count
+        self.items = items ?? nil
+        self.numSections = self.items?.count ?? numSections!
         self.colors = colors
     }
 
@@ -40,7 +40,7 @@ class SpinnerController: ObservableObject {
                 startAngle: start,
                 endAngle: end,
                 color: colorDistribution[index],
-                text: items.indices.contains(index) ? items[index] : nil,
+                item: items == nil ? nil: items?[index],
                 size: size
             )
         }

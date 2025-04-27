@@ -54,7 +54,7 @@ struct SpinnerView: View {
         let selectedIndex = Int(correctedAngle / segmentSize) % viewModel.options.count
 
         DispatchQueue.main.async {
-            selectedItem.wrappedValue = viewModel.options[selectedIndex].text
+            selectedItem.wrappedValue = viewModel.options[selectedIndex].item?.text
         }
     }
 }
@@ -63,7 +63,7 @@ struct SpinnerView_Previews: PreviewProvider {
         SpinnerView(
             viewModel: SpinnerController(
                 size: 300,
-                items: ["Hello", "GoodBye", "How are you?"],
+                items: Constants.genericItems.examples,
                 numSections: nil,
                 colors: ComponentColors.rouletteBackground
             ),

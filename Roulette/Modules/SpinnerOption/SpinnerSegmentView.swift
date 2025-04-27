@@ -14,14 +14,14 @@ struct SpinnerSegment: View {
             Path { path in
                 let center = CGPoint(x: option.size / 2, y: option.size / 2)
                 let radius = option.size / 2
-
+                
                 path.move(to: center)
                 path.addArc(center: center, radius: radius, startAngle: Angle(degrees: option.startAngle), endAngle: Angle(degrees: option.endAngle), clockwise: false)
                 path.closeSubpath()
             }
             .fill(option.color)
-
-            if let text = option.text {
+            
+            if let text = option.item?.text {
                 Text(text)
                     .font(.system(size: option.size * 0.07, weight: .bold))
                     .foregroundColor(.white)
@@ -36,7 +36,7 @@ struct SpinnerSegment: View {
 
 struct SpinningSegmentView_Previews: PreviewProvider {
     static var previews: some View {
-        SpinnerSegment(option: SpinnerOptionModel(startAngle: 0, endAngle: 90, color: ComponentColors.background[0], text: "Hello world", size: 200))
+        SpinnerSegment(option: SpinnerOptionModel(startAngle: 0, endAngle: 90, color: ComponentColors.background[0], item: Item(text: "Hello world") , size: 200))
     }
 }
 
