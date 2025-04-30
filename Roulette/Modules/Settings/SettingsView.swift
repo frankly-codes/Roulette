@@ -14,13 +14,8 @@ struct SettingsView: View {
     var body: some View {
         
         ZStack {
-            RadialGradient(
-                gradient: Gradient(colors: ComponentColors.background),
-                center: .center,
-                startRadius: controller.dynamicSize * 0.1,
-                endRadius: controller.dynamicSize * 0.8
-            )
-            .ignoresSafeArea()
+            ComponentColors.background
+                .ignoresSafeArea()
             
             VStack {
                 HStack{

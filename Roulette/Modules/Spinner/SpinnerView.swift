@@ -14,7 +14,7 @@ struct SpinnerView: View {
     var body: some View {
         ZStack {
             ForEach(viewModel.options) { option in
-                SpinnerSegment(option: option)
+                SpinnerSegmentView(option: option, viewModel: viewModel)
             }
         }
         .rotationEffect(.degrees(viewModel.rotationAngle))
@@ -58,6 +58,7 @@ struct SpinnerView: View {
         }
     }
 }
+
 struct SpinnerView_Previews: PreviewProvider {
     static var previews: some View {
         SpinnerView(

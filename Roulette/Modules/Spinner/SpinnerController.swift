@@ -18,8 +18,9 @@ class SpinnerController: ObservableObject {
     @Published var lastRotation: Double = 0
     @Published var angularVelocity: Double = 0
     @Published var isInteractionDisabled: Bool = false
-    private var decelerationTimer: Timer?
+    @Published var finalFontSize: CGFloat = 0
 
+    private var decelerationTimer: Timer?
     lazy var colorDistribution: [Color] = distributeColorsEvenly(colors, count: numSections)
 
     init(size: CGFloat, items: ItemsModel? = nil, numSections: Int?, colors: [Color]) {
@@ -27,6 +28,8 @@ class SpinnerController: ObservableObject {
         self.items = items ?? nil
         self.numSections = self.items?.count ?? numSections!
         self.colors = colors
+
+        calculateFinalFontSize()
     }
 
     var options: [SpinnerOptionModel] {
@@ -40,7 +43,7 @@ class SpinnerController: ObservableObject {
                 startAngle: start,
                 endAngle: end,
                 color: colorDistribution[index],
-                item: items == nil ? nil: items?[index],
+                item: items == nil ? nil : items?[index],
                 size: size
             )
         }
@@ -71,21 +74,44 @@ class SpinnerController: ObservableObject {
     }
 
     func distributeColorsEvenly(_ colors: [Color], count: Int) -> [Color] {
+        guard !colors.isEmpty, count > 0 else { return [] }
+
         var result: [Color] = []
-        var availableColors = colors.shuffled()
+        var colorIndex = 0
 
         for i in 0..<count {
-            if availableColors.isEmpty {
-                availableColors = colors.shuffled()
+            let currentColor = colors[colorIndex % colors.count]
+
+            if i > 0 && currentColor == result[i - 1] {
+                colorIndex += 1
             }
 
-            if i > 0, result.last == availableColors.first {
-                availableColors.append(availableColors.removeFirst())
-            }
+            result.append(colors[colorIndex % colors.count])
+            colorIndex += 1
+        }
 
-            result.append(availableColors.removeFirst())
+        if result.count > 1 {
+            let firstColor = result.first
+            let secondLastColor = result[result.count - 2]
+            if result.last == firstColor || result.last == secondLastColor {
+                if let replacement = colors.first(where: { $0 != firstColor && $0 != secondLastColor }) {
+                    result[result.count - 1] = replacement
+                }
+            }
         }
 
         return result
+    }
+
+    private func calculateFinalFontSize() {
+        let usableRadius = size * 0.25
+        let segmentAngle = 360.0 / Double(numSections)
+        let segmentArcLength = (segmentAngle / 360.0) * (2 * .pi * usableRadius)
+
+        var baseFontSize = segmentArcLength * 0.6
+        baseFontSize = min(baseFontSize, size * 0.07)
+        baseFontSize = max(baseFontSize, size * 0.02)
+
+        finalFontSize = baseFontSize
     }
 }

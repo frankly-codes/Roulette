@@ -10,6 +10,7 @@ import SwiftUI
 
 class MainController: ObservableObject {
     @Published var selectedItem: String?
+    @Published var rouletteName: String?
     @Published var showSettings = false
     @Published var showEdit = false
     @Published var spinnerController: SpinnerController

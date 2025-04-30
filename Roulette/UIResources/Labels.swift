@@ -10,6 +10,7 @@ import Foundation
 struct Labels {
     struct MainView{
         static let SPIN_THE_WHEEL = "Spin the wheel"
+        static let GENERIC_WHEEL_TITLE = "Dares!"
         
     }
     

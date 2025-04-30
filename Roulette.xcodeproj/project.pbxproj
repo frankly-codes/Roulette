@@ -23,6 +23,10 @@
 		765EC55A2D851FFD00552A5B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765EC5592D851FFD00552A5B /* ContentView.swift */; };
 		765EC55C2D851FFE00552A5B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 765EC55B2D851FFE00552A5B /* Assets.xcassets */; };
 		765EC5602D851FFE00552A5B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 765EC55F2D851FFE00552A5B /* Preview Assets.xcassets */; };
+		76A8AC802DC03B45007FD800 /* TitleModuleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A8AC7F2DC03B45007FD800 /* TitleModuleView.swift */; };
+		76A8AC822DC03C25007FD800 /* SpinnerModuleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A8AC812DC03C25007FD800 /* SpinnerModuleView.swift */; };
+		76A8AC842DC03C5B007FD800 /* EditButtonModuleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A8AC832DC03C5B007FD800 /* EditButtonModuleView.swift */; };
+		76A8AC862DC04995007FD800 /* SettingsButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A8AC852DC04995007FD800 /* SettingsButtonView.swift */; };
 		76E1B26B2D8A1FF50061D5DB /* SpinnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E1B26A2D8A1FF50061D5DB /* SpinnerView.swift */; };
 		76E1B26D2D8A20200061D5DB /* SpinnerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E1B26C2D8A20200061D5DB /* SpinnerModel.swift */; };
 		76E1B26F2D8A202B0061D5DB /* SpinnerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E1B26E2D8A202B0061D5DB /* SpinnerController.swift */; };
@@ -51,6 +55,10 @@
 		765EC55B2D851FFE00552A5B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		765EC55D2D851FFE00552A5B /* Roulette.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Roulette.entitlements; sourceTree = "<group>"; };
 		765EC55F2D851FFE00552A5B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		76A8AC7F2DC03B45007FD800 /* TitleModuleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleModuleView.swift; sourceTree = "<group>"; };
+		76A8AC812DC03C25007FD800 /* SpinnerModuleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerModuleView.swift; sourceTree = "<group>"; };
+		76A8AC832DC03C5B007FD800 /* EditButtonModuleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditButtonModuleView.swift; sourceTree = "<group>"; };
+		76A8AC852DC04995007FD800 /* SettingsButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsButtonView.swift; sourceTree = "<group>"; };
 		76E1B26A2D8A1FF50061D5DB /* SpinnerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerView.swift; sourceTree = "<group>"; };
 		76E1B26C2D8A20200061D5DB /* SpinnerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerModel.swift; sourceTree = "<group>"; };
 		76E1B26E2D8A202B0061D5DB /* SpinnerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerController.swift; sourceTree = "<group>"; };
@@ -86,6 +94,10 @@
 			children = (
 				7625D8382D8A744E00A48ADD /* MainView.swift */,
 				7625D83E2D8A80D500A48ADD /* MainController.swift */,
+				76A8AC7F2DC03B45007FD800 /* TitleModuleView.swift */,
+				76A8AC812DC03C25007FD800 /* SpinnerModuleView.swift */,
+				76A8AC832DC03C5B007FD800 /* EditButtonModuleView.swift */,
+				76A8AC852DC04995007FD800 /* SettingsButtonView.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -276,6 +288,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				76A8AC842DC03C5B007FD800 /* EditButtonModuleView.swift in Sources */,
 				7625D8532D8BA76700A48ADD /* SettingsView.swift in Sources */,
 				7609BAF92DBDC54B002A26BA /* Binder.swift in Sources */,
 				7625D8572D8D1E0600A48ADD /* Constants.swift in Sources */,
@@ -285,8 +298,11 @@
 				7625D83D2D8A7B6100A48ADD /* Labels.swift in Sources */,
 				7609BAF32DBDB2E4002A26BA /* ItemsView.swift in Sources */,
 				765EC55A2D851FFD00552A5B /* ContentView.swift in Sources */,
+				76A8AC862DC04995007FD800 /* SettingsButtonView.swift in Sources */,
+				76A8AC822DC03C25007FD800 /* SpinnerModuleView.swift in Sources */,
 				7625D8392D8A744E00A48ADD /* MainView.swift in Sources */,
 				76E1B2752D8A21E00061D5DB /* SpinningBackgroundView.swift in Sources */,
+				76A8AC802DC03B45007FD800 /* TitleModuleView.swift in Sources */,
 				7609BAF52DBDB7BA002A26BA /* ItemsController.swift in Sources */,
 				7625D8552D8BA8AC00A48ADD /* SettingsController.swift in Sources */,
 				7625D83B2D8A785600A48ADD /* Icons.swift in Sources */,
