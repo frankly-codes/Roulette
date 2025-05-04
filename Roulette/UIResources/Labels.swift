@@ -10,7 +10,16 @@ import Foundation
 struct Labels {
     struct MainView{
         static let SPIN_THE_WHEEL = "Spin the wheel"
+        static let GENERIC_WHEEL_TITLE = "Dares!"
         
+    }
+    
+    struct ItemsView{
+        static let TITLE = "Edit Roulette"
+        static let ADD = "Add New Item"
+        static let UNTITLED = "Untitled Item"
+        static let SAVE = "Save Items"
+        static let DELETE = "Delete Items"
     }
     
     struct Settings{

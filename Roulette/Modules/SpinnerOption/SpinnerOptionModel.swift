@@ -13,6 +13,6 @@ struct SpinnerOptionModel: Identifiable {
     let startAngle: Double
     let endAngle: Double
     let color: Color
-    let text: String?
+    let item: Item?
     let size: CGFloat
 }

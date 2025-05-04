@@ -8,91 +8,37 @@
 import SwiftUI
 
 struct MainView: View {
-    @StateObject private var controller = MainController()
-    @StateObject private var spinnerController = SpinnerController(
-        size: UIScreen.main.bounds.width * 0.8,
-        items: ["Premio", "Nada", "Sorpresa", "Otra vez", "Bonus", "Sigue"],
-        numSections: nil,
-        colors: ComponentColors.rouletteBackground
-    )
-    @State var showSettings = false
-
+    @ObservedObject var controller = MainController()
     
     var body: some View {
         ZStack {
-            VStack{
-                HStack{
-                    Spacer()
-                    Button(action: {
-                        showSettings = true
-                    }){
-                        Icons.SETTINGS
-                            .resizable()
-                            .scaledToFit()
-                            .foregroundColor(ComponentColors.button)
-                            .frame(width: 40)
-                            .padding()
-                    }
-                    .padding(.top)
-                    
-                }
+            VStack {
+                SettingsButtonView(controller: controller)
                 Spacer()
+                TitleModuleView(controller: controller)
+                SpinnerModuleView(controller: controller)
+                Spacer()
+                EditButtonModuleView(controller: controller)
             }
-            VStack{
-                SelectedItemView(selectedItem: $controller.selectedItem)
-                
-                ZStack {
-                    SpinnerView(
-                        viewModel: spinnerController,
-                        selectedItem: $controller.selectedItem
-                    )
-                    .overlay(
-                        Circle()
-                            .stroke(ComponentColors.border, lineWidth: 5)
-                    )
-                    
-                    SelectionIndicator(size: Constants.ScreenSize.screenSize.width * 0.8)
-                }
-            }
+            .blur(radius: controller.showEdit ? 9 : 0)
+            .ignoresSafeArea()
             
+            if controller.showEdit {
+                ItemsView(mainController: controller, itemsController: controller.itemsController)
+            }
         }
-        .fullScreenCover(isPresented: $showSettings) {
+        .fullScreenCover(isPresented: $controller.showSettings) {
             SettingsView(controller: SettingsController())
-            
         }
         .background(
             SpinningBackgroundView()
                 .scaleEffect(2.0)
                 .ignoresSafeArea()
+                .blur(radius: controller.showEdit ? 9 : 0)
         )
     }
 }
 
-struct SelectedItemView: View {
-    @Binding var selectedItem: String?
-
-    var body: some View {
-        Text(selectedItem ?? Labels.MainView.SPIN_THE_WHEEL)
-            .font(.title)
-            .foregroundStyle(ComponentColors.label)
-            .fontWeight(.bold)
-            .padding()
-    }
-}
-
-struct SelectionIndicator: View {
-    let size: CGFloat
-
-    var body: some View {
-        Icons.MAPPIN
-            .resizable()
-            .scaledToFit()
-            .rotationEffect(.degrees(180))
-            .frame(width: 10, height: 40)
-            .foregroundColor(ComponentColors.border)
-            .offset(y: size / 2)
-    }
-}
 struct MainView_Previews: PreviewProvider {
     static var previews: some View {
         MainView()

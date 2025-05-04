@@ -14,7 +14,7 @@ struct SpinnerView: View {
     var body: some View {
         ZStack {
             ForEach(viewModel.options) { option in
-                SpinnerSegment(option: option)
+                SpinnerSegmentView(option: option, viewModel: viewModel)
             }
         }
         .rotationEffect(.degrees(viewModel.rotationAngle))
@@ -54,16 +54,17 @@ struct SpinnerView: View {
         let selectedIndex = Int(correctedAngle / segmentSize) % viewModel.options.count
 
         DispatchQueue.main.async {
-            selectedItem.wrappedValue = viewModel.options[selectedIndex].text
+            selectedItem.wrappedValue = viewModel.options[selectedIndex].item?.text
         }
     }
 }
+
 struct SpinnerView_Previews: PreviewProvider {
     static var previews: some View {
         SpinnerView(
             viewModel: SpinnerController(
                 size: 300,
-                items: ["Hello", "GoodBye", "How are you?"],
+                items: ItemsController(items: Constants.genericItems.examples, rouletteName: Labels.MainView.GENERIC_WHEEL_TITLE),
                 numSections: nil,
                 colors: ComponentColors.rouletteBackground
             ),
