@@ -10,10 +10,10 @@ import SwiftUI
 
 class SpinnerController: ObservableObject {
     let size: CGFloat
-    let items: ItemsModel?
     let numSections: Int
     let colors: [Color]
 
+    @Published var controller: ItemsController?
     @Published var rotationAngle: Double = 0
     @Published var lastRotation: Double = 0
     @Published var angularVelocity: Double = 0
@@ -23,10 +23,10 @@ class SpinnerController: ObservableObject {
     private var decelerationTimer: Timer?
     lazy var colorDistribution: [Color] = distributeColorsEvenly(colors, count: numSections)
 
-    init(size: CGFloat, items: ItemsModel? = nil, numSections: Int?, colors: [Color]) {
+    init(size: CGFloat, items: ItemsController? = nil, numSections: Int?, colors: [Color]) {
         self.size = size
-        self.items = items ?? nil
-        self.numSections = self.items?.count ?? numSections!
+        self.controller = items ?? nil
+        self.numSections = items?.items.count ?? numSections!
         self.colors = colors
 
         calculateFinalFontSize()
@@ -43,7 +43,7 @@ class SpinnerController: ObservableObject {
                 startAngle: start,
                 endAngle: end,
                 color: colorDistribution[index],
-                item: items == nil ? nil : items?[index],
+                item: controller?.items == nil ? nil : controller?.items[index],
                 size: size
             )
         }

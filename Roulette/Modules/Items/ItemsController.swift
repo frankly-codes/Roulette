@@ -10,9 +10,11 @@ import SwiftUI
 
 class ItemsController: ObservableObject{
     @Published var items: ItemsModel
+    @Published var rouletteName: String
     
-    init(items: ItemsModel) {
+    init(items: ItemsModel, rouletteName: String) {
         self.items = items
+        self.rouletteName = rouletteName
     }
     
     func moveItem(from source: IndexSet, to destination: Int) {
@@ -23,23 +25,26 @@ class ItemsController: ObservableObject{
         items.remove(atOffsets: offsets)
     }
     
+    func deleteItems() {
+        items.removeAll()
+    }
+    
     func addItem() {
         items.append(Item(text: ""))
     }
     
     func saveItems() {
-        // Aquí puedes hacer el guardado real
         print("Saving Items: \(items.map { $0.text })")
     }
     
     var isSaveDisabled: Bool {
-        items.contains { $0.text.trimmingCharacters(in: .whitespaces).isEmpty }
-    }
-    
-    func binding(for index: Int) -> Binding<String> {
-        Binding(
-            get: { self.items[index].text },
-            set: { self.items[index].text = $0 }
-        )
+        var isSaveDisabled: Bool {
+            let hasEmptyItem = items.contains { $0.text.trimmingCharacters(in: .whitespaces).isEmpty }
+            let isItemsEmpty = items.isEmpty
+            let isTitleEmpty = rouletteName.trimmingCharacters(in: .whitespaces).isEmpty
+
+            return hasEmptyItem || isItemsEmpty || isTitleEmpty
+        }
+        return isSaveDisabled
     }
 }

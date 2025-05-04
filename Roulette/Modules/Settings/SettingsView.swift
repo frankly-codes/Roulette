@@ -21,11 +21,12 @@ struct SettingsView: View {
                 HStack{
                     Spacer()
                     Button(action: {
-                                    dismiss()
-                                }) {
-                                    Icons.XMARK    .foregroundColor(ComponentColors.button)
-                                }
-                                .padding()
+                        dismiss()
+                    }) {
+                        Icons.XMARK    
+                            .foregroundColor(ComponentColors.button)
+                    }
+                    .padding()
                 }
                 Form {
                     Section(header: 

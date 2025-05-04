@@ -64,7 +64,7 @@ struct SpinnerView_Previews: PreviewProvider {
         SpinnerView(
             viewModel: SpinnerController(
                 size: 300,
-                items: Constants.genericItems.examples,
+                items: ItemsController(items: Constants.genericItems.examples, rouletteName: Labels.MainView.GENERIC_WHEEL_TITLE),
                 numSections: nil,
                 colors: ComponentColors.rouletteBackground
             ),

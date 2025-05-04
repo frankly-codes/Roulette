@@ -24,6 +24,8 @@ struct ComponentColors {
     static let label_pink = ColorNames.rpink
     static let border = ColorNames.rwhite
     static let button = ColorNames.rwhite
+    static let buttonAccent = ColorNames.rred
+    static let stroke = ColorNames.rwhite
     static let toggle = ColorNames.rpink
     static let background = ColorNames.rpink
     static let backgroundSegments = [ColorNames.rwhite.opacity(0.3), ColorNames.rwhite.opacity(0)]

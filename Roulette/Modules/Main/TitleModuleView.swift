@@ -11,10 +11,21 @@ struct TitleModuleView: View {
     @ObservedObject var controller: MainController
 
     var body: some View {
-        Text(controller.rouletteName ?? Labels.MainView.GENERIC_WHEEL_TITLE)
-            .font(.title)
-            .fontWeight(.bold)
-            .foregroundStyle(ComponentColors.label)
-            .padding(.top, 40)
+        HStack{
+            Text(controller.rouletteName)
+                .font(.title)
+                .fontWeight(.bold)
+                .foregroundStyle(ComponentColors.label)
+            Button(action: {
+                controller.showEdit = true
+            }) {
+                Icons.PENCIL
+                    .resizable()
+                    .scaledToFit()
+                    .foregroundColor(ComponentColors.label.opacity(0.5))
+                    .frame(width: 20)
+            }
+        }
+        .padding(.top, 40)
     }
 }
