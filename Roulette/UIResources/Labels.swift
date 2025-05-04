@@ -18,7 +18,9 @@ struct Labels {
         static let TITLE = "Edit Roulette"
         static let ADD = "Add New Item"
         static let UNTITLED = "Untitled Item"
+        static let SKIP = "Skip"
         static let SAVE = "Save Items"
+        static let DELETE_ONE = "Delete from list"
         static let DELETE = "Delete Items"
     }
     

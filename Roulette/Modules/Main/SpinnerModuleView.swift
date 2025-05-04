@@ -6,10 +6,12 @@
 //
 
 import SwiftUI
+import ConfettiSwiftUI
 
 struct SpinnerModuleView: View {
     @StateObject var controller: MainController
-
+    @State private var trigger: Bool = false
+    
     var body: some View {
         ZStack {
             VStack {
@@ -19,6 +21,11 @@ struct SpinnerModuleView: View {
                     .foregroundStyle(ComponentColors.label)
                     .padding(.bottom, 20)
                     .multilineTextAlignment(.center)
+                    .lineLimit(2)
+                    .fixedSize(horizontal: false, vertical: true)
+                    .onChange(of: controller.selectedItem){
+                        controller.showResult = true
+                    }
 
                 ZStack {
                     SpinnerView(
@@ -30,7 +37,6 @@ struct SpinnerModuleView: View {
                             .stroke(ComponentColors.border, lineWidth: 5)
                     )
 
-                    // Indicador fijo
                     Icons.MAPPIN
                         .resizable()
                         .scaledToFit()
@@ -41,6 +47,24 @@ struct SpinnerModuleView: View {
                 }
                 .frame(width: Constants.ScreenSize.screenSize.width * 0.8,
                        height: Constants.ScreenSize.screenSize.width * 0.8)
+            }
+            
+            if controller.showResult {
+                SelectedItemPopupView(controller: controller)
+                    .confettiCannon(
+                        trigger: $trigger,
+                        num: 100,
+                        colors: ComponentColors.rouletteBackground,
+                        confettiSize: 20,
+                        radius: 400
+                    )
+                    .onAppear{
+                        //Trigger dosen't care about the value, just needs an update to its value to trigger the animation
+                        trigger.toggle()                        
+                    }
+                    .onDisappear{
+                        controller.showResult = false
+                    }
             }
         }
     }

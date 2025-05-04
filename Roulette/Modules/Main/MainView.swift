@@ -34,7 +34,7 @@ struct MainView: View {
             SpinningBackgroundView()
                 .scaleEffect(2.0)
                 .ignoresSafeArea()
-                .blur(radius: controller.showEdit ? 9 : 0)
+                .blur(radius: (controller.showEdit||controller.showResult) ? 9 : 0)
         )
     }
 }
