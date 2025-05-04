@@ -26,6 +26,8 @@
 		76A8AC822DC03C25007FD800 /* SpinnerModuleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A8AC812DC03C25007FD800 /* SpinnerModuleView.swift */; };
 		76A8AC842DC03C5B007FD800 /* EditButtonModuleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A8AC832DC03C5B007FD800 /* EditButtonModuleView.swift */; };
 		76A8AC862DC04995007FD800 /* SettingsButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A8AC852DC04995007FD800 /* SettingsButtonView.swift */; };
+		76A8AC8D2DC8105C007FD800 /* ConfettiSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 76A8AC8C2DC8105C007FD800 /* ConfettiSwiftUI */; };
+		76A8AC8F2DC814F3007FD800 /* SelectedItemPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A8AC8E2DC814F3007FD800 /* SelectedItemPopupView.swift */; };
 		76E1B26B2D8A1FF50061D5DB /* SpinnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E1B26A2D8A1FF50061D5DB /* SpinnerView.swift */; };
 		76E1B26D2D8A20200061D5DB /* SpinnerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E1B26C2D8A20200061D5DB /* SpinnerModel.swift */; };
 		76E1B26F2D8A202B0061D5DB /* SpinnerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E1B26E2D8A202B0061D5DB /* SpinnerController.swift */; };
@@ -57,6 +59,7 @@
 		76A8AC812DC03C25007FD800 /* SpinnerModuleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerModuleView.swift; sourceTree = "<group>"; };
 		76A8AC832DC03C5B007FD800 /* EditButtonModuleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditButtonModuleView.swift; sourceTree = "<group>"; };
 		76A8AC852DC04995007FD800 /* SettingsButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsButtonView.swift; sourceTree = "<group>"; };
+		76A8AC8E2DC814F3007FD800 /* SelectedItemPopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedItemPopupView.swift; sourceTree = "<group>"; };
 		76E1B26A2D8A1FF50061D5DB /* SpinnerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerView.swift; sourceTree = "<group>"; };
 		76E1B26C2D8A20200061D5DB /* SpinnerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerModel.swift; sourceTree = "<group>"; };
 		76E1B26E2D8A202B0061D5DB /* SpinnerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerController.swift; sourceTree = "<group>"; };
@@ -71,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				76A8AC8D2DC8105C007FD800 /* ConfettiSwiftUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -96,6 +100,7 @@
 				76A8AC812DC03C25007FD800 /* SpinnerModuleView.swift */,
 				76A8AC832DC03C5B007FD800 /* EditButtonModuleView.swift */,
 				76A8AC852DC04995007FD800 /* SettingsButtonView.swift */,
+				76A8AC8E2DC814F3007FD800 /* SelectedItemPopupView.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -231,6 +236,9 @@
 			dependencies = (
 			);
 			name = Roulette;
+			packageProductDependencies = (
+				76A8AC8C2DC8105C007FD800 /* ConfettiSwiftUI */,
+			);
 			productName = Roulette;
 			productReference = 765EC5542D851FFD00552A5B /* Roulette.app */;
 			productType = "com.apple.product-type.application";
@@ -259,6 +267,9 @@
 				Base,
 			);
 			mainGroup = 765EC54B2D851FFD00552A5B;
+			packageReferences = (
+				76A8AC8B2DC8105C007FD800 /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */,
+			);
 			productRefGroup = 765EC5552D851FFD00552A5B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -299,6 +310,7 @@
 				7625D8392D8A744E00A48ADD /* MainView.swift in Sources */,
 				76E1B2752D8A21E00061D5DB /* SpinningBackgroundView.swift in Sources */,
 				76A8AC802DC03B45007FD800 /* TitleModuleView.swift in Sources */,
+				76A8AC8F2DC814F3007FD800 /* SelectedItemPopupView.swift in Sources */,
 				7609BAF52DBDB7BA002A26BA /* ItemsController.swift in Sources */,
 				7625D8552D8BA8AC00A48ADD /* SettingsController.swift in Sources */,
 				7625D83B2D8A785600A48ADD /* Icons.swift in Sources */,
@@ -527,6 +539,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		76A8AC8B2DC8105C007FD800 /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/simibac/ConfettiSwiftUI";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		76A8AC8C2DC8105C007FD800 /* ConfettiSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 76A8AC8B2DC8105C007FD800 /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */;
+			productName = ConfettiSwiftUI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 765EC54C2D851FFD00552A5B /* Project object */;
 }

@@ -13,6 +13,7 @@ class MainController: ObservableObject {
     @Published var rouletteName: String
     @Published var showSettings = false
     @Published var showEdit = false
+    @Published var showResult = false
     @Published var itemsController: ItemsController
     @Published var spinnerController: SpinnerController
     
