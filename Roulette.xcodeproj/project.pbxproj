@@ -18,6 +18,8 @@
 		7625D8532D8BA76700A48ADD /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7625D8522D8BA76700A48ADD /* SettingsView.swift */; };
 		7625D8552D8BA8AC00A48ADD /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7625D8542D8BA8AC00A48ADD /* SettingsController.swift */; };
 		7625D8572D8D1E0600A48ADD /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7625D8562D8D1E0600A48ADD /* Constants.swift */; };
+		765A64E72E0B84DE00656CD4 /* LaunchScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765A64E62E0B84DE00656CD4 /* LaunchScreenView.swift */; };
+		765A64EA2E0BA8BB00656CD4 /* ConfettiSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 765A64E92E0BA8BB00656CD4 /* ConfettiSwiftUI */; };
 		765EC5582D851FFD00552A5B /* RouletteApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765EC5572D851FFD00552A5B /* RouletteApp.swift */; };
 		765EC55A2D851FFD00552A5B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765EC5592D851FFD00552A5B /* ContentView.swift */; };
 		765EC55C2D851FFE00552A5B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 765EC55B2D851FFE00552A5B /* Assets.xcassets */; };
@@ -26,7 +28,6 @@
 		76A8AC822DC03C25007FD800 /* SpinnerModuleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A8AC812DC03C25007FD800 /* SpinnerModuleView.swift */; };
 		76A8AC842DC03C5B007FD800 /* EditButtonModuleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A8AC832DC03C5B007FD800 /* EditButtonModuleView.swift */; };
 		76A8AC862DC04995007FD800 /* SettingsButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A8AC852DC04995007FD800 /* SettingsButtonView.swift */; };
-		76A8AC8D2DC8105C007FD800 /* ConfettiSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 76A8AC8C2DC8105C007FD800 /* ConfettiSwiftUI */; };
 		76A8AC8F2DC814F3007FD800 /* SelectedItemPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A8AC8E2DC814F3007FD800 /* SelectedItemPopupView.swift */; };
 		76E1B26B2D8A1FF50061D5DB /* SpinnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E1B26A2D8A1FF50061D5DB /* SpinnerView.swift */; };
 		76E1B26D2D8A20200061D5DB /* SpinnerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E1B26C2D8A20200061D5DB /* SpinnerModel.swift */; };
@@ -49,6 +50,7 @@
 		7625D8522D8BA76700A48ADD /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		7625D8542D8BA8AC00A48ADD /* SettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
 		7625D8562D8D1E0600A48ADD /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		765A64E62E0B84DE00656CD4 /* LaunchScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenView.swift; sourceTree = "<group>"; };
 		765EC5542D851FFD00552A5B /* Roulette.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Roulette.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		765EC5572D851FFD00552A5B /* RouletteApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouletteApp.swift; sourceTree = "<group>"; };
 		765EC5592D851FFD00552A5B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -75,7 +77,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				76A8AC8D2DC8105C007FD800 /* ConfettiSwiftUI in Frameworks */,
+				765A64EA2E0BA8BB00656CD4 /* ConfettiSwiftUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -122,6 +124,14 @@
 				7625D8542D8BA8AC00A48ADD /* SettingsController.swift */,
 			);
 			path = Settings;
+			sourceTree = "<group>";
+		};
+		765A64E52E0B84CB00656CD4 /* LaunchScreen */ = {
+			isa = PBXGroup;
+			children = (
+				765A64E62E0B84DE00656CD4 /* LaunchScreenView.swift */,
+			);
+			path = LaunchScreen;
 			sourceTree = "<group>";
 		};
 		765EC54B2D851FFD00552A5B = {
@@ -175,6 +185,7 @@
 		76E1B2662D8684EC0061D5DB /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				765A64E52E0B84CB00656CD4 /* LaunchScreen */,
 				7609BAEF2DBDB2A1002A26BA /* Items */,
 				7625D8512D8BA75700A48ADD /* Settings */,
 				7625D8372D8A743800A48ADD /* Main */,
@@ -239,7 +250,7 @@
 			);
 			name = Roulette;
 			packageProductDependencies = (
-				76A8AC8C2DC8105C007FD800 /* ConfettiSwiftUI */,
+				765A64E92E0BA8BB00656CD4 /* ConfettiSwiftUI */,
 			);
 			productName = Roulette;
 			productReference = 765EC5542D851FFD00552A5B /* Roulette.app */;
@@ -270,7 +281,7 @@
 			);
 			mainGroup = 765EC54B2D851FFD00552A5B;
 			packageReferences = (
-				76A8AC8B2DC8105C007FD800 /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */,
+				765A64E82E0BA8BB00656CD4 /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */,
 			);
 			productRefGroup = 765EC5552D851FFD00552A5B /* Products */;
 			projectDirPath = "";
@@ -299,6 +310,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				76A8AC842DC03C5B007FD800 /* EditButtonModuleView.swift in Sources */,
+				765A64E72E0B84DE00656CD4 /* LaunchScreenView.swift in Sources */,
 				7625D8532D8BA76700A48ADD /* SettingsView.swift in Sources */,
 				7625D8572D8D1E0600A48ADD /* Constants.swift in Sources */,
 				76E1B2772D8A2C540061D5DB /* SpinnerSegmentView.swift in Sources */,
@@ -551,7 +563,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		76A8AC8B2DC8105C007FD800 /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */ = {
+		765A64E82E0BA8BB00656CD4 /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/simibac/ConfettiSwiftUI";
 			requirement = {
@@ -562,9 +574,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		76A8AC8C2DC8105C007FD800 /* ConfettiSwiftUI */ = {
+		765A64E92E0BA8BB00656CD4 /* ConfettiSwiftUI */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 76A8AC8B2DC8105C007FD800 /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */;
+			package = 765A64E82E0BA8BB00656CD4 /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */;
 			productName = ConfettiSwiftUI;
 		};
 /* End XCSwiftPackageProductDependency section */

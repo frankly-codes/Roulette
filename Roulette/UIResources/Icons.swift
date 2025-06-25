@@ -17,6 +17,11 @@ struct IconNames {
     static let PENCIL = "pencil"
 }
 
+struct ImageNames {
+    static let ROULETTE = "Roulette"
+    static let R = "R"
+}
+
 struct Icons {
     static let MAPPIN = Image(systemName: IconNames.MAPPIN)
     static let SETTINGS = Image(systemName: IconNames.SETTINGS)
@@ -24,4 +29,9 @@ struct Icons {
     static let EDIT_BUTTON = Image( systemName: IconNames.GEAR_CIRCLE)
     static let PLUS_CIRCLE = Image( systemName: IconNames.PLUS_CIRCLE)
     static let PENCIL = Image( systemName: IconNames.PENCIL)
+}
+
+struct Images {
+    static let ROULETTE = Image(ImageNames.ROULETTE)
+    static let R = Image(ImageNames.R)
 }

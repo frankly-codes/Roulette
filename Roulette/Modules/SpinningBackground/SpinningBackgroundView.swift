@@ -32,7 +32,7 @@ struct SpinningBackgroundView: View {
             }
             .ignoresSafeArea()
 
-            VStack {
+            /*VStack {
                 Button(controller.isAnimating ? "Detener" : "Iniciar") {
                     controller.toggleAnimation()
                 }
@@ -41,7 +41,7 @@ struct SpinningBackgroundView: View {
                 .foregroundColor(.white)
                 .clipShape(Capsule())
                 .padding()
-            }
+            }*/
         }
     }
 }
